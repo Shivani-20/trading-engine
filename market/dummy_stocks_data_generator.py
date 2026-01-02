@@ -11,15 +11,15 @@ class Generator:
 
     async def start(self):
         while True:
-            self.price += random.randint(-int(os.environ("PRICE_FLUCTUATION")), int(os.environ("PRICE_FLUCTUATION")))
+            self.price += random.randint(-int(os.environ.get("PRICE_FLUCTUATION")), int(os.environ.get("PRICE_FLUCTUATION")))
             current_time = datetime.now()
             tick = {
-                "instrument": os.environ("DEFAULT_INDEX"),
+                "instrument": os.environ.get("DEFAULT_INDEX"),
                 "price": self.price,
                 "time": current_time.strftime("%H:%M:%S")
             }
 
-            if current_time.time() >= datetime.strptime(os.environ("MARKET_CLOSE"), "%H:%M").time():
+            if current_time.time() >= datetime.strptime(os.environ.get("MARKET_CLOSE"), "%H:%M").time():
                 await self.event_bus.publish(
                     Event(EventType.SHUTDOWN, {})
                 )
