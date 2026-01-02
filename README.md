@@ -39,13 +39,13 @@ Failed strategies (if any)
 * Strategies run concurrently
 * One strategy failure does not affect others
 
-### How to run using Docker:
+## How to run with Docker:
 * Using Dockerfile to build app's image, and docker-compose to start the container
 ```bash
 docker compose up --build
 ```
 
-## How to run without Docker:
+### How to run without Docker:
 * Add the following variables one by one in powershell session
 ```
 $env:DEFAULT_PRICE=20110
