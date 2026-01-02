@@ -7,7 +7,7 @@ import os
 class Generator:
     def __init__(self, event_bus):
         self.event_bus = event_bus
-        self.price = int(os.environ("DEFAULT_PRICE"))
+        self.price = int(os.environ.get("DEFAULT_PRICE"))
 
     async def start(self):
         while True:
