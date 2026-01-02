@@ -21,11 +21,5 @@ class StrategyManager:
         for s in self.strategies:
             await s.shutdown()
 
-    def health_snapshot(self):
-        inactive = sum(1 for s in self.strategies if s.failed)
-        return {
-            "total": len(self.strategies),
-            "inactive": inactive
-        }
 
 
