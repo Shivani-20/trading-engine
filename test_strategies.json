@@ -1,0 +1,29 @@
+[
+  {
+    "strategy_id": "S1",
+    "instrument": "NIFTY",
+    "entry_condition": "price > 20100",
+    "exit_condition": "price < 20050 OR time >= '15:20'",
+    "quantity": 50,
+    "max_loss": 2000,
+    "max_profit": 3000
+  },
+  {
+    "strategy_id": "S2",
+    "instrument": "NIFTY",
+    "entry_condition": "price < 20080",
+    "exit_condition": "price > 20140 OR time >= '15:20'",
+    "quantity": 25,
+    "max_loss": 1000,
+    "max_profit": 2000
+  },
+  {
+    "strategy_id": "S3",
+    "instrument": "NIFTY",
+    "entry_condition": "price >= 20120",
+    "exit_condition": "price <= 20090 OR time >= '15:20'",
+    "quantity": 75,
+    "max_loss": 2500,
+    "max_profit": 3500
+  }
+]

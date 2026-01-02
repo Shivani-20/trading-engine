@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  trading-engine:
+    image: python:3.11  # Use official Python image
+    container_name: trading-engine
+    working_dir: /app
+    volumes:
+      - .:/app   # Mount current folder into container
+    environment:
+      DEFAULT_PRICE: 100
+      PRICE_FLUCTUATION: 10
+      DEFAULT_INDEX: "NIFTY"
+      MARKET_CLOSE: "15:20"
+    command: python main.py
