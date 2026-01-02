@@ -9,7 +9,16 @@
     "max_profit": 3000
   },
   {
-    "strategy_id": "S2",
+    "strategy_id": "S2 - bad_strategy",
+    "instrument": "NIFTY",
+    "entry_condition": "price > unknown_variable",
+    "exit_condition": "price < 90",
+    "quantity": 1,
+    "max_loss": 10,
+    "max_profit": 20
+  },
+  {
+    "strategy_id": "S3",
     "instrument": "NIFTY",
     "entry_condition": "price < 20080",
     "exit_condition": "price > 20140 OR time >= '15:20'",
@@ -18,12 +27,66 @@
     "max_profit": 2000
   },
   {
-    "strategy_id": "S3",
+    "strategy_id": "S4",
     "instrument": "NIFTY",
     "entry_condition": "price >= 20120",
     "exit_condition": "price <= 20090 OR time >= '15:20'",
     "quantity": 75,
     "max_loss": 2500,
     "max_profit": 3500
+  },
+  {
+    "strategy_id": "S5",
+    "instrument": "NIFTY",
+    "entry_condition": "price > 45000",
+    "exit_condition": "price < 44900 OR time >= '15:10'",
+    "quantity": 20,
+    "max_loss": 1500,
+    "max_profit": 2500
+  },
+  {
+    "strategy_id": "S6 - bad_strategy",
+    "instrument": "NIFTY",
+    "entry_condition": "price >> 20000",
+    "exit_condition": "price < 19900",
+    "quantity": 10,
+    "max_loss": 500,
+    "max_profit": 1000
+  },
+  {
+    "strategy_id": "S7 - bad_strategy",
+    "instrument": "NIFTY",
+    "entry_condition": "",
+    "exit_condition": "price < 19800",
+    "quantity": 5,
+    "max_loss": 300,
+    "max_profit": 600
+  },
+  {
+    "strategy_id": "S8",
+    "instrument": "NIFTY",
+    "entry_condition": "price < 20050",
+    "exit_condition": "price > 20100 OR time >= '15:00'",
+    "quantity": 30,
+    "max_loss": 1200,
+    "max_profit": 1800
+  },
+  {
+    "strategy_id": "S9",
+    "instrument": "NIFTY",
+    "entry_condition": "price >= 45200",
+    "exit_condition": "price <= 45100 OR time >= '15:15'",
+    "quantity": 10,
+    "max_loss": 800,
+    "max_profit": 1600
+  },
+  {
+    "strategy_id": "S10",
+    "instrument": "NIFTY",
+    "entry_condition": "price > 20150",
+    "exit_condition": "price < 20100 OR time >= '15:05'",
+    "quantity": 40,
+    "max_loss": 1700,
+    "max_profit": 2200
   }
 ]
