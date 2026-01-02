@@ -24,6 +24,5 @@ class EventBus:
             except Exception:
                 # Critical: isolate failure
                 logger.exception(
-                    "SUBSCRIBER_FAILED | subscriber=%s",
-                    getattr(callback, "__name__", "unknown")
+                    f"SUBSCRIBER_FAILED | subscriber={getattr(callback, '__name__', 'unknown')}"
                 )

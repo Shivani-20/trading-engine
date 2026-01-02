@@ -14,9 +14,10 @@ from strategy.state import StrategyState
 import logging
 
 logging.basicConfig(
+    level=logging.INFO,
+    force=True,
     format="%(asctime)s [%(levelname)s] [%(name)s] %(message)s",
-    datefmt="%H:%M:%S",
-    handlers=[logging.StreamHandler()]
+    datefmt="%H:%M:%S"
 )
 
 def print_final_summary(manager: StrategyManager):

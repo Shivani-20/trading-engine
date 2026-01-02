@@ -52,12 +52,12 @@ class StrategyRuntime:
                 self.pnl = (tick["price"] - self.entry_price) * self.qty
 
                 if self.pnl <= -self.max_loss:
-                    logger.info("STOP_LOSS_HIT", self.id)
+                    logger.info(f"STOP_LOSS_HIT {self.id}")
                     await self.sell(tick["price"], forced=True)
                     self.state = StrategyState.FORCE_CLOSED
 
                 elif self.pnl >= self.max_profit:
-                    logger.info("TARGET_HIT", self.id)
+                    logger.info(f"TARGET_HIT {self.id}")
                     await self.sell(tick["price"], forced=True)
                     self.state = StrategyState.FORCE_CLOSED
 
@@ -68,17 +68,17 @@ class StrategyRuntime:
 
         except Exception as e:
             self.failed = True
-            logger.error(f"STRATEGY_ERROR: {str(e)}", self.id)
+            logger.error(f"STRATEGY_ERROR: {str(e)}, {self.id}")
 
 
     async def buy(self, price):
         self.entry_price = price
-        logger.info(f"ENTRY @ {price}", self.id)
+        logger.info(f"ENTRY @ {price}, {self.id}")
         await self.emit_order("BUY", price)
 
     async def sell(self, price, forced=False):
         reason = "FORCED_EXIT" if forced else "NORMAL_EXIT"
-        logger.info(f"EXIT @ {price} | {reason}", self.id)
+        logger.info(f"EXIT @ {price} | {reason}, {self.id}")
         await self.emit_order(
             "SELL",
             price,
