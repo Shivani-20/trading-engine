@@ -77,6 +77,6 @@ python main.py --health
 * I would enable/disable an order execution or strategy execution at runtime
 * I have provided strategies for only NIFTY based stocks, can be expanded to other indexes
 * I will add the count of those strategies in the health check summary whose entry conditions never met in the market hours
-* A strategy that fails currently continues to attempt recomputation; I will mitigate it by disabling failed strategies during runtime
+* If one or more strategies fail, then will implement a circuit breaker that would disable one or more strategies during runtime
 * Currently the health check function does not diagnose if there are any inactive strategies during runtime, will add that
 
