@@ -21,10 +21,10 @@ Files:
 
 * As the market closing hour is hit, a shutdown event is fired and market data feed is stopped and summary is printed:
 
-Total strategies
-Successfully completed
-Force-closed
-Failed strategies (if any)
+    * Total strategies
+    * Successfully completed
+    * Force-closed
+    * Failed strategies (if any)
 
 * At any given point, there is a possibility that a specific strategy's entry condiiton is never met so it is not recorded in the above summary.
 
