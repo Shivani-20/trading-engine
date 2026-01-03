@@ -40,8 +40,10 @@ Failed strategies (if any)
 * One strategy failure does not affect others
 
 ## How to run with Docker:
-* Using Dockerfile to build app's image, and docker-compose to start the container
-```bash
+* Run the following commands:-
+```
+git clone https://github.com/Shivani-20/trading-engine.git
+cd trading-engine
 docker compose up --build
 ```
 
